@@ -1,0 +1,23 @@
+# Project defaults. Replace data.csv with the production frame index.
+seed: 42
+data:
+  csv: data/frames.csv
+  image_root: data/images
+  image_size: 128
+  telemetry_columns: [nozzle_temperature, bed_temperature, extrusion_rate, layer_height]
+model:
+  name: tiny_vit_fusion
+  num_classes: 2
+  patch_size: 16
+  embed_dim: 192
+  depth: 4
+  num_heads: 6
+  dropout: 0.1
+  telemetry_dim: 4
+train:
+  epochs: 10
+  batch_size: 32
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  num_workers: 0
+  output_dir: runs/default
